@@ -8,7 +8,7 @@ const servicios = [
     },
     {
         nombre: "Maquetación con plantilla",
-        descripcion: "Maquetación mediante la selección de plantillas predefinidas con la opción de añadir o quitar componentes",
+        descripcion: "Maquetación mediante la selección de plantillas predefinidas con la opción de añadir combinar o quitar componentes",
         servicio: "Maquetación",
         paquete: "growth"
     },
@@ -50,14 +50,11 @@ const servicios = [
     }
 ];
 
-// Función para filtrar los servicios por tipo de paquete
-const consultarServicios = paquete => {
-    for (let filtrarServicios of servicios) {
-        if (filtrarServicios.paquete === paquete) {
-            console.log(filtrarServicios.nombre);
-        }
-    }
-};
+// ARRAY METHODS FIND para filrar por tipo de paquetes
+
+let tipoPaquete;
+
+tipoPaquete = servicios.filter( propiedad => propiedad.paquete == 'growth');
 
 // Función para consultar los detalles del servicio
 const consultarDetallesServicios = nombre => {
@@ -69,5 +66,5 @@ const consultarDetallesServicios = nombre => {
 }
 
 
-consultarServicios("growth");
+console.table(tipoPaquete)
 consultarDetallesServicios("Mantenimiento de la base de datos");
